@@ -25,39 +25,43 @@ namespace FirstDatabase
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-                String connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
-                
-                using (SqlConnection connection = new SqlConnection(connString))
+            String connString = ConfigurationManager.ConnectionStrings["dbx"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+
+                //string query = "INSERT INTO StudentInfo(Name, Email) VALUES(@Name,@Email)";
+
+                string storedproc = @"dbo.[userproc_StudentInsertDetail]";
+
+                using (SqlCommand sqlCommand = new SqlCommand(storedproc, connection))
                 {
-                    connection.Open();
-                    string query = "INSERT INTO StudentInfo(Name, Email) VALUES(@Name,@Email)";
-                    using (SqlCommand sqlCommand = new SqlCommand(query,connection))
-                    {
-                        // sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                        // Parameters for StudentInsetDetails
+                    // Parameters for StudentInsetDetails
 
-                        // sqlCommand.Parameters.Add("@Name", SqlDbType.NVarChar, 100).Value = NameTextBox.Text;
-                        sqlCommand.Parameters.AddWithValue("@Name", NameTextBox.Text);
-                        sqlCommand.Parameters.AddWithValue("@Email", EmailTextBox.Text);
+                    // sqlCommand.Parameters.Add("@Name", SqlDbType.NVarChar, 100).Value = NameTextBox.Text;
+                    sqlCommand.Parameters.AddWithValue("@Name", NameTextBox.Text);
+                    sqlCommand.Parameters.AddWithValue("@Email", EmailTextBox.Text);
 
-                        // Open the database connection
-                        // connection.Open();
+                    // Open the database connection
+                    // connection.Open();
 
-                        /*  ExecuteReader   =>>>    For Select Statements.
-                         *  ExecuteScalar   =>>>    For Select Statements.
-                         *  ExecuteNonQuery  =>>>    For Insert, Updat, and Delete Statements.
-                        */
+                    /*  ExecuteReader   =>>>    For Select Statements.
+                     *  ExecuteScalar   =>>>    For Select Statements.
+                     *  ExecuteNonQuery  =>>>    For Insert, Updat, and Delete Statements.
+                    */
 
-                        // Execute Insert Statement
-                        sqlCommand.ExecuteNonQuery();
+                    // Execute Insert Statement
+                    sqlCommand.ExecuteNonQuery();
 
-                        connection.Close();
+                    connection.Close();
 
-                        MessageBox.Show("Studnet Details are added to the System", "User Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    MessageBox.Show("Studnet Details are added to the System", "User Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            
+            }
+
         }
 
     }
