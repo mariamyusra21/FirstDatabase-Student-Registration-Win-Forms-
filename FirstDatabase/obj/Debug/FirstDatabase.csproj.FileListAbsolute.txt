@@ -1,0 +1,12 @@
+D:\C# Projects\FirstDatabase\FirstDatabase\bin\Debug\FirstDatabase.exe.config
+D:\C# Projects\FirstDatabase\FirstDatabase\bin\Debug\FirstDatabase.exe
+D:\C# Projects\FirstDatabase\FirstDatabase\bin\Debug\FirstDatabase.pdb
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.csproj.AssemblyReference.cache
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.csproj.SuggestedBindingRedirects.cache
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.ManageStudentsForm.resources
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.Properties.Resources.resources
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.StudentInfoForm.resources
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.csproj.GenerateResource.cache
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.csproj.CoreCompileInputs.cache
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.exe
+D:\C# Projects\FirstDatabase\FirstDatabase\obj\Debug\FirstDatabase.pdb
